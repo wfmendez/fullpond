@@ -1,0 +1,104 @@
+import Link from "next/link";
+import { requireAdmin } from "@/lib/dal";
+import { db } from "@/lib/db";
+import { updateVacancyStatusAction, deleteVacancyAction } from "@/lib/actions/vacancy";
+
+export const metadata = { title: "Vacancies — Admin FullPond" };
+
+const STATUS_LABELS: Record<string, string> = {
+  DRAFT: "Draft",
+  OPEN: "Open",
+  CLOSED: "Closed",
+};
+
+export default async function AdminVacanciesPage() {
+  await requireAdmin();
+  const vacancies = await db.vacancy.findMany({
+    include: {
+      _count: { select: { applications: true } },
+      client: { select: { name: true } },
+    },
+    orderBy: { createdAt: "desc" },
+  });
+
+  return (
+    <div className="mx-auto max-w-5xl">
+      <div className="mb-8 flex items-center justify-between">
+        <div>
+          <h1 className="font-display text-3xl tracking-tight text-ink-900">Vacancies</h1>
+          <p className="mt-1 text-stone-500">Create, publish, and manage your roles.</p>
+        </div>
+        <Link
+          href="/admin/vacancies/new"
+          className="inline-flex items-center gap-2 rounded-full bg-gradient-to-b from-brand-400 to-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow ring-1 ring-inset ring-white/20 transition hover:brightness-110"
+        >
+          + New vacancy
+        </Link>
+      </div>
+
+      {vacancies.length === 0 ? (
+        <div className="rounded-2xl border border-dashed border-stone-300 bg-white/60 p-10 text-center text-stone-500">
+          No vacancies yet. Create the first one.
+        </div>
+      ) : (
+        <ul className="space-y-3">
+          {vacancies.map((v) => (
+            <li
+              key={v.id}
+              className="flex flex-col gap-3 rounded-2xl border border-stone-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between"
+            >
+              <div className="min-w-0">
+                <div className="flex items-center gap-2">
+                  <h2 className="font-display text-lg text-ink-900">{v.title}</h2>
+                  <span className="rounded-full bg-stone-100 px-2 py-0.5 text-xs font-medium text-stone-600">
+                    {STATUS_LABELS[v.status]}
+                  </span>
+                </div>
+                <p className="mt-0.5 text-sm text-stone-500">
+                  {v._count.applications} applications
+                  {v.client ? ` · ${v.client.name}` : ""}
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-2">
+                <Link
+                  href={`/admin/pipeline?vacancy=${v.id}`}
+                  className="rounded-full border border-stone-300 px-3 py-1.5 text-xs font-medium text-stone-700 transition hover:bg-stone-100"
+                >
+                  View candidates
+                </Link>
+                <form action={updateVacancyStatusAction} className="flex items-center gap-1.5">
+                  <input type="hidden" name="id" value={v.id} />
+                  <select
+                    name="status"
+                    defaultValue={v.status}
+                    className="rounded-lg border border-stone-300 bg-white px-2 py-1.5 text-xs text-ink-900"
+                  >
+                    <option value="DRAFT">Draft</option>
+                    <option value="OPEN">Open</option>
+                    <option value="CLOSED">Closed</option>
+                  </select>
+                  <button
+                    type="submit"
+                    className="rounded-full bg-brand-600 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-brand-700"
+                  >
+                    Save
+                  </button>
+                </form>
+                <form action={deleteVacancyAction}>
+                  <input type="hidden" name="id" value={v.id} />
+                  <button
+                    type="submit"
+                    className="rounded-full border border-red-200 px-3 py-1.5 text-xs font-medium text-red-600 transition hover:bg-red-50"
+                  >
+                    Delete
+                  </button>
+                </form>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
