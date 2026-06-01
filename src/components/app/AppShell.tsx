@@ -35,6 +35,7 @@ export function AppShell({ user, children }: { user: ShellUser; children: React.
                   <Link href="/admin/vacancies" className="transition-colors hover:text-ink-900">Vacancies</Link>
                   <Link href="/admin/pipeline" className="transition-colors hover:text-ink-900">Pipeline</Link>
                   <Link href="/admin/clients" className="transition-colors hover:text-ink-900">Clients</Link>
+                  <Link href="/admin/emails" className="transition-colors hover:text-ink-900">Emails</Link>
                 </>
               ) : (
                 <>

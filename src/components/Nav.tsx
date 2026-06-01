@@ -52,7 +52,7 @@ export function Nav() {
               </a>
             ))}
             <a
-              href={`mailto:${site.email}`}
+              href="/login"
               className="group inline-flex items-center gap-1.5 rounded-full bg-gradient-to-b from-brand-400 to-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 ring-1 ring-inset ring-white/20 transition-all hover:shadow-brand-500/40 hover:brightness-110"
             >
               Start today
@@ -98,7 +98,7 @@ export function Nav() {
                 </a>
               ))}
               <a
-                href={`mailto:${site.email}`}
+                href="/login"
                 onClick={() => setOpen(false)}
                 className="mt-2 flex items-center justify-center gap-1.5 rounded-full bg-gradient-to-b from-brand-400 to-brand-600 px-5 py-3 text-sm font-semibold text-white"
               >
