@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { Logo } from "@/components/icons";
 import { logoutAction } from "@/lib/auth-actions";
 
 type ShellUser = {
@@ -23,9 +22,8 @@ export function AppShell({ user, children }: { user: ShellUser; children: React.
           <div className="flex items-center gap-7">
             <Link
               href="/"
-              className="flex items-center gap-2 font-display text-xl font-semibold tracking-tight text-ink-900"
+              className="font-display text-xl font-semibold tracking-tight text-ink-900"
             >
-              <Logo className="h-7 w-7 text-brand-500" />
               FullPond
             </Link>
             <nav className="hidden items-center gap-6 text-sm font-medium text-stone-600 md:flex">

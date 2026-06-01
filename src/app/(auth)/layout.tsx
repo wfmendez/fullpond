@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Logo } from "@/components/icons";
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -20,9 +19,8 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
       <div className="relative z-10 w-full max-w-md">
         <Link
           href="/"
-          className="mb-8 flex items-center justify-center gap-2.5 text-white transition-opacity hover:opacity-90"
+          className="mb-8 flex items-center justify-center text-white transition-opacity hover:opacity-90"
         >
-          <Logo className="h-9 w-9 text-brand-400" />
           <span className="font-display text-2xl font-semibold tracking-tight">FullPond</span>
         </Link>
         {children}
