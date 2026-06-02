@@ -13,8 +13,28 @@ type QRow = {
   mapsTo: string;
 };
 
-const TYPES = ["TEXT", "TEXTAREA", "SELECT", "RADIO", "NUMBER", "EMAIL", "PHONE", "URL"];
-const MAPS = ["", "fullName", "country", "contactMethod", "whatsapp", "linkedin", "salaryExpectation"];
+// Human-readable type labels (value → display)
+const TYPES: { value: string; label: string; hint: string }[] = [
+  { value: "TEXT",     label: "Short text",     hint: "One line answer" },
+  { value: "TEXTAREA", label: "Long text",      hint: "Multi-line answer" },
+  { value: "SELECT",   label: "Dropdown",       hint: "Pick one from a list" },
+  { value: "RADIO",    label: "Multiple choice",hint: "Pick one visible option" },
+  { value: "NUMBER",   label: "Number",         hint: "Numeric input" },
+  { value: "EMAIL",    label: "Email",          hint: "Valid email address" },
+  { value: "PHONE",    label: "Phone",          hint: "Phone / WhatsApp number" },
+  { value: "URL",      label: "Link / URL",     hint: "Web address (https://…)" },
+];
+
+// Human-readable map labels
+const MAPS: { value: string; label: string }[] = [
+  { value: "",                 label: "— No mapping —" },
+  { value: "fullName",         label: "Full name" },
+  { value: "country",          label: "Country" },
+  { value: "contactMethod",    label: "Preferred contact" },
+  { value: "whatsapp",         label: "WhatsApp number" },
+  { value: "linkedin",         label: "LinkedIn profile" },
+  { value: "salaryExpectation",label: "Salary expectation" },
+];
 
 const newRow = (): QRow => ({
   label: "",
@@ -148,11 +168,11 @@ export function VacancyForm({ clients }: { clients: ClientOption[] }) {
                   <input value={r.section} onChange={(e) => update(i, { section: e.target.value })} className={inputCls} />
                 </div>
                 <div>
-                  <label className="mb-1 block text-xs font-medium text-stone-500">Type</label>
+                  <label className="mb-1 block text-xs font-medium text-stone-500">Answer type</label>
                   <select value={r.type} onChange={(e) => update(i, { type: e.target.value })} className={inputCls}>
                     {TYPES.map((t) => (
-                      <option key={t} value={t}>
-                        {t}
+                      <option key={t.value} value={t.value}>
+                        {t.label} — {t.hint}
                       </option>
                     ))}
                   </select>
@@ -172,11 +192,14 @@ export function VacancyForm({ clients }: { clients: ClientOption[] }) {
                   </div>
                 )}
                 <div>
-                  <label className="mb-1 block text-xs font-medium text-stone-500">Maps to (optional)</label>
+                  <label className="mb-1 block text-xs font-medium text-stone-500">
+                    Save answer to field
+                    <span className="ml-1 text-stone-400">(optional)</span>
+                  </label>
                   <select value={r.mapsTo} onChange={(e) => update(i, { mapsTo: e.target.value })} className={inputCls}>
                     {MAPS.map((m) => (
-                      <option key={m} value={m}>
-                        {m === "" ? "— None —" : m}
+                      <option key={m.value} value={m.value}>
+                        {m.label}
                       </option>
                     ))}
                   </select>
