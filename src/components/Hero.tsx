@@ -4,7 +4,6 @@ import { motion, type Variants } from "motion/react";
 import { Container } from "./ui/Container";
 import { Ripples } from "./ui/Ripples";
 import { IconArrowRight } from "./icons";
-import { site } from "@/lib/site";
 
 const container: Variants = {
   hidden: {},
@@ -86,7 +85,7 @@ export function Hero() {
             className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
           >
             <a
-              href={`mailto:${site.email}`}
+              href="/login"
               className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-b from-brand-400 to-brand-600 px-7 py-3.5 text-base font-semibold text-white shadow-xl shadow-brand-500/30 ring-1 ring-inset ring-white/20 transition-all hover:shadow-brand-400/50 hover:brightness-110 sm:w-auto"
             >
               Start today

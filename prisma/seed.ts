@@ -42,14 +42,14 @@ async function main() {
   const demoPassword = await bcrypt.hash("Demo2026!", 10);
 
   const admin = await db.user.upsert({
-    where: { email: "wuillian.f.mendez@gmail.com" },
+    where: { email: "admin@fullpond.co" },
     update: { role: "ADMIN" },
     create: {
-      email: "wuillian.f.mendez@gmail.com",
-      name: "Wuillian Méndez",
+      email: "admin@fullpond.co",
+      name: "FullPond Recruiter",
       password: adminPassword,
       role: "ADMIN",
-      country: "Honduras",
+      country: "Remote",
     },
   });
 

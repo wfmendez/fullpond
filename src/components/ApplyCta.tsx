@@ -45,7 +45,7 @@ export function ApplyCta() {
               <IconArrowUpRight className="h-5 w-5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
             <a
-              href={`mailto:${site.email}`}
+              href="/hire"
               className="inline-flex w-full items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 py-4 text-base font-semibold text-white backdrop-blur transition-colors hover:border-white/35 hover:bg-white/10 sm:w-auto"
             >
               Hire talent instead

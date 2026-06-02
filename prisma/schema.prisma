@@ -172,3 +172,18 @@ model EmailLog {
 
   @@index([vacancyId])
 }
+
+// Inbound "hire talent" requests from businesses (landing → /hire contact form).
+model HireLead {
+  id         String   @id @default(cuid())
+  company    String
+  name       String
+  email      String
+  roleNeeded String?
+  teamSize   String?
+  message    String?  @db.Text
+  status     String   @default("NEW") // NEW | CONTACTED | WON | LOST
+  createdAt  DateTime @default(now())
+
+  @@index([createdAt])
+}

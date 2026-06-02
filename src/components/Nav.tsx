@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Container } from "./ui/Container";
 import { IconMenu, IconX, IconArrowRight } from "./icons";
-import { navLinks, site } from "@/lib/site";
+import { navLinks } from "@/lib/site";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);

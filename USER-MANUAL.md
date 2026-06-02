@@ -15,7 +15,7 @@ There are two seeded accounts so you can try both sides immediately:
 
 | Role | Email | Password |
 |------|-------|----------|
-| **Recruiter (Admin)** | `wuillian.f.mendez@gmail.com` | `FullPond2026!` |
+| **Recruiter (Admin)** | `admin@fullpond.co` | `FullPond2026!` |
 | **Candidate (demo)** | `demo@fullpond.co` | `Demo2026!` |
 
 Anyone can also **Sign up** for a new candidate account from the landing page (“Start today”) or
