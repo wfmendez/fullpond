@@ -230,7 +230,7 @@ export default function GuidePage() {
           {[
             { q: "Can I apply to the same role twice?", a: "No — the system prevents duplicate applications. If you already applied, your dashboard will say so." },
             { q: "Do candidates see recruiter notes?", a: "No — recruiter notes are private and only visible to admins in the candidate profile." },
-            { q: "What does Demo mode mean for emails?", a: "Without a Resend API key, emails are rendered and logged (you can preview them) but not actually sent. Add a key to Vercel env vars to go live." },
+            { q: "How do vacancy emails work?", a: "When you open a new role, you can instantly notify your entire talent pool with one click. Every candidate receives a personalised email with the role title and their name — keeping them engaged and driving more quality applications." },
             { q: "What is the Client interview stage?", a: "This is when the candidate meets the actual hiring company. Mark a candidate at this stage when you've arranged that introduction." },
             { q: "Can I log in with Google?", a: "Yes — the Sign in page has a Continue with Google button. First-time Google users get a candidate account created automatically." },
           ].map(({ q, a }) => (
