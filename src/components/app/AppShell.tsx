@@ -74,6 +74,15 @@ export function AppShell({ user, children }: { user: ShellUser; children: React.
             </nav>
           </div>
 
+          {/* How to use button — center of header */}
+          <Link
+            href="/guide"
+            className="hidden items-center gap-1.5 rounded-full border-2 border-fp-dark/20 bg-white/30 px-4 py-1.5 text-xs font-semibold text-fp-dark transition hover:bg-fp-dark hover:text-fp-blue md:inline-flex"
+          >
+            <span>?</span>
+            How to use this app
+          </Link>
+
           {/* Auth controls */}
           <div className="flex items-center gap-3">
             {user ? (
