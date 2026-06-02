@@ -29,37 +29,36 @@ export function Benefits() {
       <Container className="relative">
         <Reveal className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">
-            <span className="h-px w-8 bg-brand-500/40" />
-            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-600">
+            <span className="h-px w-8 bg-fp-dark/20" />
+            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-fp-dark/60">
               For candidates
             </span>
-            <span className="h-px w-8 bg-brand-500/40" />
+            <span className="h-px w-8 bg-fp-dark/20" />
           </div>
-          <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight text-ink-900 text-balance md:text-5xl">
+          <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight text-fp-dark text-balance md:text-5xl">
             Some other <span className="italic">benefits</span>
           </h2>
-          <p className="mt-4 text-lg text-stone-500 text-pretty">
-            Joining the pond means more than great work — it means being taken
-            care of.
+          <p className="mt-4 text-lg text-fp-dark/60 text-pretty">
+            Joining the pond means more than great work — it means being taken care of.
           </p>
         </Reveal>
 
         <RevealGroup className="mt-16 grid gap-6 md:grid-cols-3">
           {benefits.map(({ Icon, title, body }) => (
             <RevealItem key={title} className="h-full">
-              <div className="group relative h-full overflow-hidden rounded-4xl border border-stone-200 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/10">
+              <div className="group relative h-full overflow-hidden rounded-4xl border-2 border-stone-200 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-fp-blue hover:shadow-xl hover:shadow-fp-blue/20">
                 <Ripples
                   count={4}
-                  className="pointer-events-none absolute -bottom-12 -right-12 aspect-square w-44 text-brand-500/0 transition-colors duration-500 group-hover:text-brand-500/15"
+                  className="pointer-events-none absolute -bottom-12 -right-12 aspect-square w-44 text-fp-blue/0 transition-colors duration-500 group-hover:text-fp-blue/40"
                 />
                 <div className="relative">
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-50 text-brand-600 shadow-sm ring-1 ring-stone-100 transition-colors duration-300 group-hover:bg-gradient-to-b group-hover:from-brand-400 group-hover:to-brand-600 group-hover:text-white group-hover:ring-transparent">
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-fp-blue/15 text-fp-dark shadow-sm transition-all duration-300 group-hover:bg-fp-blue group-hover:text-fp-dark">
                     <Icon className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-5 font-display text-xl font-semibold text-ink-900">
+                  <h3 className="mt-5 font-display text-xl font-semibold text-fp-dark">
                     {title}
                   </h3>
-                  <p className="mt-2 text-stone-500 text-pretty">{body}</p>
+                  <p className="mt-2 text-fp-dark/60 text-pretty">{body}</p>
                 </div>
               </div>
             </RevealItem>
