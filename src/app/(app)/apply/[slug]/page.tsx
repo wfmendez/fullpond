@@ -31,7 +31,7 @@ export default async function ApplyPage({ params }: { params: Promise<{ slug: st
   return (
     <div className="mx-auto max-w-2xl">
       <header className="mb-8">
-        <p className="text-sm font-semibold uppercase tracking-wider text-brand-600">Application</p>
+        <p className="text-sm font-semibold uppercase tracking-wider text-fp-violet">Application</p>
         <h1 className="mt-1 font-display text-3xl tracking-tight text-ink-900">{vacancy.title}</h1>
         <p className="mt-2 text-sm text-stone-500">
           Complete the form — it takes 5–7 minutes. Your answers go straight to the FullPond team.

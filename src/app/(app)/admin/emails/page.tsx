@@ -67,7 +67,7 @@ export default async function EmailsPage() {
         </div>
         <button
           type="submit"
-          className="inline-flex items-center gap-2 rounded-full bg-gradient-to-b from-brand-400 to-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow ring-1 ring-inset ring-white/20 transition hover:brightness-110"
+          className="inline-flex items-center gap-2 rounded-full bg-fp-dark px-5 py-2.5 text-sm font-semibold text-fp-blue shadow transition hover:opacity-90"
         >
           Send notifications
         </button>
@@ -97,7 +97,7 @@ export default async function EmailsPage() {
                 </span>
               </div>
               <details className="mt-2">
-                <summary className="cursor-pointer text-xs font-medium text-brand-600 hover:text-brand-700">
+                <summary className="cursor-pointer text-xs font-medium text-fp-dark/70 hover:text-fp-dark">
                   Preview email
                 </summary>
                 <iframe

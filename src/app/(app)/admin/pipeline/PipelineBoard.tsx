@@ -45,7 +45,7 @@ function Card({ card }: { card: PipelineCard }) {
       <Link
         href={`/admin/candidates/${card.id}`}
         onPointerDown={(e) => e.stopPropagation()}
-        className="mt-2 inline-block text-xs font-medium text-brand-600 hover:text-brand-700"
+        className="mt-2 inline-block text-xs font-medium text-fp-dark/70 hover:text-fp-dark"
       >
         View profile →
       </Link>
@@ -59,7 +59,7 @@ function Column({ stage, cards }: { stage: Stage; cards: PipelineCard[] }) {
     <div
       ref={setNodeRef}
       className={`flex w-64 shrink-0 flex-col rounded-2xl border p-3 transition-colors ${
-        isOver ? "border-brand-400 bg-brand-50" : "border-stone-200 bg-stone-50"
+        isOver ? "border-fp-blue bg-fp-blue/10" : "border-stone-200 bg-stone-50"
       }`}
     >
       <div className="mb-2 flex items-center justify-between px-1">

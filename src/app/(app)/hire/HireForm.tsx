@@ -6,7 +6,7 @@ import { createHireLeadAction, type HireState } from "@/lib/actions/hire";
 import { IconArrowRight, IconCheck } from "@/components/icons";
 
 const inputCls =
-  "w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm text-ink-900 outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-400/20";
+  "w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm text-ink-900 outline-none transition focus:border-fp-dark focus:ring-2 focus:ring-fp-dark/10";
 const labelCls = "mb-1.5 block text-sm font-medium text-ink-900";
 
 export function HireForm() {
@@ -28,7 +28,7 @@ export function HireForm() {
         </p>
         <Link
           href="/vacancies"
-          className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-brand-600 hover:text-brand-700"
+          className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-fp-dark/70 hover:text-fp-dark"
         >
           Browse open roles meanwhile
           <IconArrowRight className="h-4 w-4" />
@@ -81,7 +81,7 @@ export function HireForm() {
       <button
         type="submit"
         disabled={pending}
-        className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-brand-400 to-brand-600 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 ring-1 ring-inset ring-white/20 transition hover:brightness-110 disabled:opacity-60"
+        className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-fp-dark px-7 py-3 text-sm font-semibold text-fp-blue shadow transition hover:opacity-90 disabled:opacity-60"
       >
         {pending ? "Sending…" : "Request talent"}
         {!pending && <IconArrowRight className="h-4 w-4" />}

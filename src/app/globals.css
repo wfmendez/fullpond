@@ -44,6 +44,10 @@
   --color-paper: #faf8f2;
   --color-paper-deep: #f1ece0;
 
+  /* FullPond accent purples (complementary, use sparingly) */
+  --color-fp-violet: #5231ff;   /* vibrant purple — CTAs, highlights, badges */
+  --color-fp-purple: #5157a4;   /* muted purple/slate — secondary elements */
+
   /* Gold — premium accent */
   --color-gold-400: #d8a64a;
   --color-gold-500: #c0863a;

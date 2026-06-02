@@ -40,7 +40,7 @@ export default async function AdminLeadsPage() {
                   </div>
                   <p className="mt-0.5 text-sm text-stone-600">
                     {lead.name} ·{" "}
-                    <a href={`mailto:${lead.email}`} className="text-brand-600 hover:underline">
+                    <a href={`mailto:${lead.email}`} className="text-fp-violet hover:underline">
                       {lead.email}
                     </a>
                   </p>
@@ -71,7 +71,7 @@ export default async function AdminLeadsPage() {
                     </select>
                     <button
                       type="submit"
-                      className="rounded-full bg-brand-600 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-brand-700"
+                      className="rounded-full bg-fp-dark px-3 py-1.5 text-xs font-semibold text-fp-blue transition hover:opacity-80"
                     >
                       Save
                     </button>

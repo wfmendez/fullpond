@@ -30,7 +30,7 @@ export default async function AdminVacanciesPage() {
         </div>
         <Link
           href="/admin/vacancies/new"
-          className="inline-flex items-center gap-2 rounded-full bg-gradient-to-b from-brand-400 to-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow ring-1 ring-inset ring-white/20 transition hover:brightness-110"
+          className="inline-flex items-center gap-2 rounded-full bg-fp-dark px-5 py-2.5 text-sm font-semibold text-fp-blue shadow transition hover:opacity-90"
         >
           + New vacancy
         </Link>
@@ -80,7 +80,7 @@ export default async function AdminVacanciesPage() {
                   </select>
                   <button
                     type="submit"
-                    className="rounded-full bg-brand-600 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-brand-700"
+                    className="rounded-full bg-fp-dark px-3 py-1.5 text-xs font-semibold text-fp-blue transition hover:opacity-80"
                   >
                     Save
                   </button>

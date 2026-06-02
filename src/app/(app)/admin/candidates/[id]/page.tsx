@@ -113,7 +113,7 @@ export default async function CandidatePage({ params }: { params: Promise<{ id: 
         </div>
         <button
           type="submit"
-          className="mt-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-b from-brand-400 to-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow ring-1 ring-inset ring-white/20 transition hover:brightness-110"
+          className="mt-4 inline-flex items-center gap-2 rounded-full bg-fp-dark px-5 py-2.5 text-sm font-semibold text-fp-blue shadow transition hover:opacity-90"
         >
           Save
         </button>

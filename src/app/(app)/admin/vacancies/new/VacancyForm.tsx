@@ -26,7 +26,7 @@ const newRow = (): QRow => ({
 });
 
 const inputCls =
-  "w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2.5 text-sm text-ink-900 outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-400/20";
+  "w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2.5 text-sm text-ink-900 outline-none transition focus:border-fp-dark focus:ring-2 focus:ring-fp-dark/10";
 const labelCls = "mb-1.5 block text-sm font-medium text-ink-900";
 
 export function VacancyForm({ clients }: { clients: ClientOption[] }) {
@@ -187,7 +187,7 @@ export function VacancyForm({ clients }: { clients: ClientOption[] }) {
                       type="checkbox"
                       checked={r.required}
                       onChange={(e) => update(i, { required: e.target.checked })}
-                      className="accent-brand-500"
+                      className="accent-fp-violet"
                     />
                     Required
                   </label>
@@ -210,7 +210,7 @@ export function VacancyForm({ clients }: { clients: ClientOption[] }) {
       <button
         type="submit"
         disabled={pending}
-        className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-brand-400 to-brand-600 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 ring-1 ring-inset ring-white/20 transition hover:brightness-110 disabled:opacity-60"
+        className="inline-flex items-center justify-center gap-2 rounded-full bg-fp-dark px-7 py-3 text-sm font-semibold text-fp-blue shadow transition hover:opacity-90 disabled:opacity-60"
       >
         {pending ? "Creating…" : "Create vacancy"}
       </button>

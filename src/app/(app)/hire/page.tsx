@@ -7,7 +7,7 @@ export default function HirePage() {
   return (
     <div className="mx-auto max-w-2xl">
       <header className="mb-8">
-        <p className="text-sm font-semibold uppercase tracking-wider text-brand-600">For companies</p>
+        <p className="text-sm font-semibold uppercase tracking-wider text-fp-violet">For companies</p>
         <h1 className="mt-1 font-display text-4xl tracking-tight text-ink-900">Hire top remote talent</h1>
         <p className="mt-3 text-stone-600">
           Tell us what you need and we&apos;ll match you with English-fluent, pre-screened professionals
@@ -24,7 +24,7 @@ export default function HirePage() {
 
       <p className="mt-4 text-center text-xs text-stone-400">
         Prefer email? Write to{" "}
-        <a href={`mailto:${site.email}`} className="text-brand-600 hover:underline">
+        <a href={`mailto:${site.email}`} className="text-fp-violet hover:underline">
           {site.email}
         </a>
         .

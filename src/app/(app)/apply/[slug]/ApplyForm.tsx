@@ -14,7 +14,7 @@ export type FormQuestion = {
 };
 
 const inputCls =
-  "w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm text-ink-900 outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-400/20";
+  "w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm text-ink-900 outline-none transition focus:border-fp-dark focus:ring-2 focus:ring-fp-dark/10";
 
 function Field({
   q,
@@ -52,7 +52,7 @@ function Field({
       <div className="space-y-2">
         {(q.options ?? []).map((o) => (
           <label key={o} className="flex items-center gap-2.5 text-sm text-stone-700">
-            <input type="radio" name={name} value={o} required={q.required} className="accent-brand-500" />
+            <input type="radio" name={name} value={o} required={q.required} className="accent-fp-violet" />
             {o}
           </label>
         ))}
@@ -70,7 +70,7 @@ function Field({
     <div>
       <label className="mb-1.5 block text-sm font-medium text-ink-900">
         {q.label}
-        {q.required && <span className="ml-0.5 text-brand-600">*</span>}
+        {q.required && <span className="ml-0.5 text-fp-violet">*</span>}
       </label>
       {control}
       {error && <p className="mt-1 text-xs text-red-600">{error}</p>}
@@ -127,7 +127,7 @@ export function ApplyForm({
       <button
         type="submit"
         disabled={pending}
-        className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-brand-400 to-brand-600 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 ring-1 ring-inset ring-white/20 transition hover:brightness-110 disabled:opacity-60"
+        className="inline-flex items-center justify-center gap-2 rounded-full bg-fp-dark px-7 py-3 text-sm font-semibold text-fp-blue shadow transition hover:opacity-90 disabled:opacity-60"
       >
         {pending ? "Submitting…" : "Submit application"}
       </button>

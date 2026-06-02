@@ -42,7 +42,7 @@ export default async function AdminHomePage() {
       <div className="mt-8 rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
         <div className="flex items-center justify-between">
           <h2 className="font-display text-lg text-ink-900">Pipeline</h2>
-          <Link href="/admin/pipeline" className="text-sm font-medium text-brand-600 hover:text-brand-700">
+          <Link href="/admin/pipeline" className="text-sm font-medium text-fp-dark/70 hover:text-fp-dark">
             View board →
           </Link>
         </div>
@@ -61,7 +61,7 @@ export default async function AdminHomePage() {
       <div className="mt-6 flex flex-wrap gap-3">
         <Link
           href="/admin/vacancies/new"
-          className="inline-flex items-center gap-2 rounded-full bg-gradient-to-b from-brand-400 to-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow ring-1 ring-inset ring-white/20 transition hover:brightness-110"
+          className="inline-flex items-center gap-2 rounded-full bg-fp-dark px-5 py-2.5 text-sm font-semibold text-fp-blue shadow transition hover:opacity-90"
         >
           + New vacancy
         </Link>

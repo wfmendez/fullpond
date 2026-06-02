@@ -1,6 +1,5 @@
 import { Container } from "./ui/Container";
 import { Reveal, RevealGroup, RevealItem } from "./ui/Reveal";
-import { Ripples } from "./ui/Ripples";
 
 const steps = [
   {
@@ -27,12 +26,6 @@ export function Process() {
       className="relative overflow-hidden py-24 md:py-32"
       style={{ background: "#64bcff" }}
     >
-      {/* Subtle ripple motif */}
-      <Ripples
-        variant="emanate"
-        count={5}
-        className="absolute left-1/2 top-0 aspect-square w-[120%] max-w-[1000px] -translate-x-1/2 text-fp-dark/[0.08]"
-      />
       <div className="absolute inset-0 bg-grain opacity-[0.04] mix-blend-multiply" />
 
       <Container className="relative">
@@ -48,7 +41,7 @@ export function Process() {
             We source. <span className="italic">You onboard.</span>
           </h2>
           <p className="mt-4 text-lg text-fp-dark/70 text-pretty">
-            A simple, three-step path from "we need help" to "welcome aboard."
+            A simple, three-step path from &ldquo;we need help&rdquo; to &ldquo;welcome aboard.&rdquo;
           </p>
         </Reveal>
 
@@ -58,18 +51,24 @@ export function Process() {
 
           {steps.map((step) => (
             <RevealItem key={step.n} className="relative">
-              <div className="group relative h-full overflow-hidden rounded-4xl border-2 border-fp-dark/15 bg-white/30 p-8 backdrop-blur-sm transition-all hover:border-fp-dark/40 hover:bg-white/50">
-                <Ripples
-                  count={4}
-                  className="pointer-events-none absolute -right-10 -top-10 aspect-square w-40 text-fp-dark/0 transition-colors duration-500 group-hover:text-fp-dark/10"
-                />
-                <span className="relative block font-display text-6xl font-semibold italic leading-none text-fp-dark/25 md:text-7xl">
+              <div className="group relative h-full overflow-hidden rounded-4xl bg-white p-8 shadow-lg shadow-fp-dark/10 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-fp-dark/15">
+                {/* Number with violet accent */}
+                <span
+                  className="relative block font-display text-6xl font-semibold italic leading-none md:text-7xl"
+                  style={{ color: "#5231ff", opacity: 0.25 }}
+                >
                   {step.n}
                 </span>
                 <h3 className="relative mt-5 font-display text-xl font-semibold leading-snug text-fp-dark">
                   {step.title}
                 </h3>
-                <p className="relative mt-3 text-fp-dark/65">{step.body}</p>
+                <p className="relative mt-3 text-fp-dark/60">{step.body}</p>
+
+                {/* Bottom accent bar */}
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-1 rounded-b-4xl opacity-0 transition-opacity group-hover:opacity-100"
+                  style={{ background: "#5231ff" }}
+                />
               </div>
             </RevealItem>
           ))}

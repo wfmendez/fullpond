@@ -26,7 +26,7 @@ export default async function DashboardPage() {
           <p className="text-stone-600">You haven&apos;t applied to any roles yet.</p>
           <Link
             href="/vacancies"
-            className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-b from-brand-400 to-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow ring-1 ring-inset ring-white/20 transition hover:brightness-110"
+            className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-fp-dark px-5 py-2.5 text-sm font-semibold text-fp-blue shadow transition hover:opacity-90"
           >
             View open roles
             <IconArrowRight className="h-4 w-4" />
@@ -57,7 +57,7 @@ export default async function DashboardPage() {
                     {PIPELINE_STAGES.map((stage, i) => (
                       <div key={stage} className="flex-1">
                         <div
-                          className={`h-1.5 rounded-full ${i <= idx ? "bg-brand-500" : "bg-stone-200"}`}
+                          className={`h-1.5 rounded-full ${i <= idx ? "bg-fp-blue" : "bg-stone-200"}`}
                           title={STAGE_LABELS[stage]}
                         />
                       </div>

@@ -14,7 +14,7 @@ export default async function VacanciesPage() {
   return (
     <div className="mx-auto max-w-4xl">
       <header className="mb-8">
-        <p className="text-sm font-semibold uppercase tracking-wider text-brand-600">Find a Job</p>
+        <p className="text-sm font-semibold uppercase tracking-wider text-fp-violet">Find a Job</p>
         <h1 className="mt-1 font-display text-4xl tracking-tight text-ink-900">Open roles</h1>
         <p className="mt-2 text-stone-500">
           Apply to remote roles with U.S. brands. Your profile travels with every application.
@@ -42,7 +42,7 @@ export default async function VacanciesPage() {
                       {v.client ? ` · ${v.client.name}` : ""}
                     </p>
                   </div>
-                  <IconArrowRight className="h-5 w-5 shrink-0 text-stone-400 transition-transform group-hover:translate-x-1 group-hover:text-brand-600" />
+                  <IconArrowRight className="h-5 w-5 shrink-0 text-stone-400 transition-transform group-hover:translate-x-1 group-hover:text-fp-violet" />
                 </div>
                 <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-stone-600">{v.summary}</p>
               </Link>

@@ -5,7 +5,7 @@ import { createClientAction, deleteClientAction } from "@/lib/actions/client";
 export const metadata = { title: "Clients — Admin FullPond" };
 
 const inputCls =
-  "w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2.5 text-sm text-ink-900 outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-400/20";
+  "w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2.5 text-sm text-ink-900 outline-none transition focus:border-fp-dark focus:ring-2 focus:ring-fp-dark/10";
 
 export default async function ClientsPage() {
   await requireAdmin();
@@ -33,7 +33,7 @@ export default async function ClientsPage() {
             <textarea name="notes" rows={2} placeholder="Notes" className={inputCls} />
             <button
               type="submit"
-              className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-b from-brand-400 to-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow ring-1 ring-inset ring-white/20 transition hover:brightness-110"
+              className="inline-flex w-full items-center justify-center rounded-full bg-fp-dark px-5 py-2.5 text-sm font-semibold text-fp-blue shadow transition hover:opacity-90"
             >
               Add client
             </button>
