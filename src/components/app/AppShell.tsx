@@ -74,12 +74,16 @@ export function AppShell({ user, children }: { user: ShellUser; children: React.
             </nav>
           </div>
 
-          {/* How to use button — center of header */}
+          {/* How to use — center of header */}
           <Link
             href="/guide"
-            className="hidden items-center gap-1.5 rounded-full border-2 border-fp-dark/20 bg-white/30 px-4 py-1.5 text-xs font-semibold text-fp-dark transition hover:bg-fp-dark hover:text-fp-blue md:inline-flex"
+            className="hidden items-center gap-2 rounded-full bg-fp-dark/10 px-4 py-1.5 text-sm font-medium text-fp-dark transition hover:bg-fp-dark hover:text-fp-blue md:inline-flex whitespace-nowrap"
           >
-            <span>?</span>
+            <svg className="h-3.5 w-3.5 shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="8" cy="8" r="7"/>
+              <path d="M8 11v-4"/>
+              <circle cx="8" cy="5.5" r=".5" fill="currentColor" stroke="none"/>
+            </svg>
             How to use this app
           </Link>
 
