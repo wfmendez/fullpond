@@ -16,80 +16,97 @@ export function AppShell({ user, children }: { user: ShellUser; children: React.
   const isAdmin = user?.role === "ADMIN";
 
   return (
-    <div className="flex min-h-screen flex-col bg-gradient-to-b from-brand-50 to-paper text-ink-900">
-      <header className="sticky top-0 z-40 border-b border-brand-200/60 bg-brand-50/80 backdrop-blur-xl">
-        <div className="h-1 w-full bg-gradient-to-r from-brand-400 via-aqua-400 to-brand-500" />
-        <Container className="flex h-16 items-center justify-between gap-4">
-          <div className="flex items-center gap-7">
-            <Link
-              href="/"
-              className="font-display text-xl font-semibold tracking-tight text-ink-900"
-            >
-              Full<span className="text-brand-600">Pond</span>
-            </Link>
-            <nav className="hidden items-center gap-6 text-sm font-medium text-stone-600 md:flex">
-              {isAdmin ? (
+    <div className="flex min-h-screen flex-col bg-paper text-fp-dark">
+
+      {/* ── App header — FullPond sky blue ── */}
+      <header className="sticky top-0 z-40 shadow-sm">
+        {/* Thin dark accent bar on top */}
+        <div className="h-1 w-full bg-fp-dark" />
+        <div className="bg-fp-blue">
+          <Container className="flex h-15 items-center justify-between gap-4">
+
+            {/* Logo / wordmark */}
+            <div className="flex items-center gap-7">
+              <Link
+                href="/"
+                className="font-display text-xl font-semibold tracking-tight text-fp-dark"
+              >
+                FullPond
+              </Link>
+
+              {/* Nav links */}
+              <nav className="hidden items-center gap-6 text-sm font-medium md:flex text-fp-dark/80">
+                {isAdmin ? (
+                  <>
+                    <Link href="/admin" className="transition-colors hover:text-fp-dark">Overview</Link>
+                    <Link href="/admin/vacancies" className="transition-colors hover:text-fp-dark">Vacancies</Link>
+                    <Link href="/admin/pipeline" className="transition-colors hover:text-fp-dark">Pipeline</Link>
+                    <Link href="/admin/clients" className="transition-colors hover:text-fp-dark">Clients</Link>
+                    <Link href="/admin/emails" className="transition-colors hover:text-fp-dark">Emails</Link>
+                    <Link href="/admin/leads" className="transition-colors hover:text-fp-dark">Leads</Link>
+                  </>
+                ) : (
+                  <>
+                    <Link href="/vacancies" className="transition-colors hover:text-fp-dark">Vacancies</Link>
+                    {user && (
+                      <Link href="/dashboard" className="transition-colors hover:text-fp-dark">
+                        My applications
+                      </Link>
+                    )}
+                  </>
+                )}
+              </nav>
+            </div>
+
+            {/* Auth controls */}
+            <div className="flex items-center gap-3">
+              {user ? (
                 <>
-                  <Link href="/admin" className="transition-colors hover:text-brand-700">Overview</Link>
-                  <Link href="/admin/vacancies" className="transition-colors hover:text-brand-700">Vacancies</Link>
-                  <Link href="/admin/pipeline" className="transition-colors hover:text-brand-700">Pipeline</Link>
-                  <Link href="/admin/clients" className="transition-colors hover:text-brand-700">Clients</Link>
-                  <Link href="/admin/emails" className="transition-colors hover:text-brand-700">Emails</Link>
-                  <Link href="/admin/leads" className="transition-colors hover:text-brand-700">Leads</Link>
+                  <span className="hidden text-sm font-medium text-fp-dark/70 sm:block">{user.name}</span>
+                  <form action={logoutAction}>
+                    <button
+                      type="submit"
+                      className="rounded-full border-2 border-fp-dark/30 bg-white/20 px-4 py-1.5 text-sm font-semibold text-fp-dark transition hover:bg-fp-dark hover:text-fp-blue"
+                    >
+                      Sign out
+                    </button>
+                  </form>
                 </>
               ) : (
                 <>
-                  <Link href="/vacancies" className="transition-colors hover:text-brand-700">Vacancies</Link>
-                  {user && (
-                    <Link href="/dashboard" className="transition-colors hover:text-brand-700">
-                      My applications
-                    </Link>
-                  )}
+                  <Link
+                    href="/login"
+                    className="text-sm font-medium text-fp-dark/80 transition-colors hover:text-fp-dark"
+                  >
+                    Sign in
+                  </Link>
+                  <Link
+                    href="/register"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-fp-dark px-5 py-1.5 text-sm font-semibold text-fp-blue shadow transition hover:opacity-90"
+                  >
+                    Sign up
+                  </Link>
                 </>
               )}
-            </nav>
-          </div>
+            </div>
 
-          <div className="flex items-center gap-3">
-            {user ? (
-              <>
-                <span className="hidden text-sm text-stone-500 sm:block">{user.name}</span>
-                <form action={logoutAction}>
-                  <button
-                    type="submit"
-                    className="rounded-full border border-stone-300 px-4 py-1.5 text-sm font-medium text-stone-700 transition hover:bg-stone-100"
-                  >
-                    Sign out
-                  </button>
-                </form>
-              </>
-            ) : (
-              <>
-                <Link href="/login" className="text-sm font-medium text-stone-600 transition-colors hover:text-brand-700">
-                  Sign in
-                </Link>
-                <Link
-                  href="/register"
-                  className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-b from-brand-400 to-brand-600 px-4 py-1.5 text-sm font-semibold text-white shadow ring-1 ring-inset ring-white/20 transition hover:brightness-110"
-                >
-                  Sign up
-                </Link>
-              </>
-            )}
-          </div>
-        </Container>
+          </Container>
+        </div>
       </header>
 
+      {/* ── Page content ── */}
       <main className="flex-1 py-10">
         <Container>{children}</Container>
       </main>
 
-      <footer className="border-t border-stone-200 py-6">
-        <Container className="flex items-center justify-between text-xs text-stone-400">
-          <span>© {new Date().getFullYear()} FullPond</span>
+      {/* ── Footer ── */}
+      <footer className="bg-fp-blue border-t-2 border-fp-dark/10 py-5">
+        <Container className="flex items-center justify-between text-xs font-medium text-fp-dark/70">
+          <span className="font-semibold text-fp-dark">FullPond</span>
           <span>Talent platform · demo</span>
         </Container>
       </footer>
+
     </div>
   );
 }

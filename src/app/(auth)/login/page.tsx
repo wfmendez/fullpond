@@ -1,9 +1,8 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import { useActionState, useState, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
 import { loginAction, type AuthState } from "@/lib/auth-actions";
 
 function GoogleIcon() {
@@ -26,97 +25,73 @@ const OAUTH_ERRORS: Record<string, string> = {
 function LoginForm() {
   const searchParams = useSearchParams();
   const oauthError = searchParams.get("error");
-
-  const [state, action, pending] = useActionState<AuthState | undefined, FormData>(
-    loginAction,
-    undefined,
-  );
+  const [state, action, pending] = useActionState<AuthState | undefined, FormData>(loginAction, undefined);
   const [show, setShow] = useState(false);
 
   const errorMsg = state?.error ?? (oauthError ? OAUTH_ERRORS[oauthError] : null);
 
+  const inputCls = "w-full rounded-xl border-2 border-fp-dark/20 bg-white px-4 py-3 text-sm text-fp-dark placeholder-fp-dark/35 outline-none transition focus:border-fp-dark focus:ring-2 focus:ring-fp-dark/10";
+
   return (
-    <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-8 shadow-2xl backdrop-blur-xl">
-      <h1 className="font-display text-3xl tracking-tight">Sign in</h1>
-      <p className="mt-1 text-sm text-white/50">Welcome back to FullPond.</p>
+    <div className="rounded-3xl bg-white/90 p-8 shadow-xl backdrop-blur-sm border-2 border-fp-dark/10">
+      <h1 className="font-display text-3xl tracking-tight text-fp-dark">Sign in</h1>
+      <p className="mt-1 text-sm text-fp-dark/60">Welcome back to FullPond.</p>
 
       {errorMsg && (
-        <p className="mt-5 rounded-xl border border-red-400/20 bg-red-500/10 px-4 py-3 text-sm text-red-200">
+        <p className="mt-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
           {errorMsg}
         </p>
       )}
 
-      {/* ── Google OAuth button ── */}
+      {/* Google button */}
       <a
         href="/api/auth/google"
-        className="mt-5 flex w-full items-center justify-center gap-3 rounded-xl border border-white/15 bg-white/[0.06] px-4 py-3 text-sm font-medium text-white/90 transition hover:bg-white/[0.12] hover:border-white/30"
+        className="mt-5 flex w-full items-center justify-center gap-3 rounded-xl border-2 border-fp-dark/20 bg-fp-blue px-4 py-3 text-sm font-semibold text-fp-dark transition hover:bg-fp-blue-dark hover:text-white hover:border-transparent"
       >
         <GoogleIcon />
         Continue with Google
       </a>
 
-      {/* ── Divider ── */}
+      {/* Divider */}
       <div className="my-5 flex items-center gap-3">
-        <div className="flex-1 h-px bg-white/10" />
-        <span className="text-[11px] uppercase tracking-widest text-white/30">or</span>
-        <div className="flex-1 h-px bg-white/10" />
+        <div className="flex-1 h-px bg-fp-dark/10" />
+        <span className="text-[11px] uppercase tracking-widest text-fp-dark/40">or</span>
+        <div className="flex-1 h-px bg-fp-dark/10" />
       </div>
 
-      {/* ── Credentials form ── */}
       <form action={action} className="space-y-4">
         <div>
-          <label htmlFor="email" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-white/45">
+          <label htmlFor="email" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-fp-dark/60">
             Email
           </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            autoComplete="email"
-            placeholder="you@email.com"
-            className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-brand-400/50 focus:bg-white/[0.07] focus:ring-2 focus:ring-brand-400/20"
-          />
+          <input id="email" name="email" type="email" required autoComplete="email"
+            placeholder="you@email.com" className={inputCls} />
         </div>
 
         <div>
-          <label htmlFor="password" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-white/45">
+          <label htmlFor="password" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-fp-dark/60">
             Password
           </label>
           <div className="relative">
-            <input
-              id="password"
-              name="password"
-              type={show ? "text" : "password"}
-              required
-              autoComplete="current-password"
-              placeholder="••••••••"
-              className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 pr-11 text-sm text-white placeholder-white/30 outline-none transition focus:border-brand-400/50 focus:bg-white/[0.07] focus:ring-2 focus:ring-brand-400/20"
-            />
-            <button
-              type="button"
-              onClick={() => setShow((v) => !v)}
-              tabIndex={-1}
+            <input id="password" name="password" type={show ? "text" : "password"} required
+              autoComplete="current-password" placeholder="••••••••" className={inputCls + " pr-11"} />
+            <button type="button" onClick={() => setShow(v => !v)} tabIndex={-1}
               aria-label={show ? "Hide password" : "Show password"}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-white/30 transition hover:text-white/60"
-            >
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-fp-dark/40 transition hover:text-fp-dark">
               {show ? "🙈" : "👁"}
             </button>
           </div>
         </div>
 
-        <button
-          type="submit"
-          disabled={pending}
-          className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-b from-brand-400 to-brand-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 ring-1 ring-inset ring-white/20 transition hover:brightness-110 disabled:opacity-60"
-        >
+        <button type="submit" disabled={pending}
+          className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-fp-dark px-5 py-3 text-sm font-semibold text-fp-blue transition hover:opacity-90 disabled:opacity-60">
           {pending ? "Signing in…" : "Sign in"}
         </button>
       </form>
 
-      <p className="mt-6 text-center text-sm text-white/50">
+      <p className="mt-6 text-center text-sm text-fp-dark/60">
         Don&apos;t have an account?{" "}
-        <Link href="/register" className="font-medium text-brand-300 hover:text-brand-200">
+        <Link href="/register" className="font-semibold text-fp-dark hover:underline">
           Sign up
         </Link>
       </p>

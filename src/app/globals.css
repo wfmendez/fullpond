@@ -6,35 +6,45 @@
    a warm serif display, and a concentric-ripple brand motif.
    ────────────────────────────────────────────────────────────── */
 @theme {
-  /* Brand — refined azure, evolved from the original sky blue */
-  --color-brand-50: #eff7ff;
-  --color-brand-100: #d9ecff;
-  --color-brand-200: #bbdcff;
-  --color-brand-300: #8ac5ff;
-  --color-brand-400: #54a6f8;
-  --color-brand-500: #2e90e5;
-  --color-brand-600: #1f74c7;
-  --color-brand-700: #1c5da1;
-  --color-brand-800: #1c4e84;
-  --color-brand-900: #1b426d;
-  --color-brand-950: #122a48;
+  /* ── FullPond brand palette ────────────────────────────────────
+     fp-blue : #64bcff  — the signature sky blue (backgrounds, badges, CTAs)
+     fp-dark : #392a0c  — warm dark brown (text on blue, logo, headings)
+     ────────────────────────────────────────────────────────────── */
+  --color-fp-blue: #64bcff;
+  --color-fp-blue-light: #a8d9ff;
+  --color-fp-blue-dark: #3a9de0;
+  --color-fp-dark: #392a0c;
+  --color-fp-dark-soft: #5a4220;
 
-  /* Aqua — bright water highlight; pairs with azure for liquid gradients */
+  /* Brand scale — now anchored to the FullPond sky blue */
+  --color-brand-50: #eef7ff;
+  --color-brand-100: #d8edff;
+  --color-brand-200: #a8d9ff;
+  --color-brand-300: #64bcff;   /* ← fp-blue */
+  --color-brand-400: #3aabf5;
+  --color-brand-500: #1f96e0;
+  --color-brand-600: #1078be;
+  --color-brand-700: #0d5f9a;
+  --color-brand-800: #0d4e7d;
+  --color-brand-900: #0e4168;
+  --color-brand-950: #092845;
+
+  /* Aqua — bright water highlight */
   --color-aqua-300: #7dd3fc;
   --color-aqua-400: #38bdf8;
   --color-aqua-500: #16a5e4;
 
-  /* Ink — deep navy "water" anchor for dark sections */
+  /* Ink — deep navy anchor for dark sections */
   --color-ink-700: #16294a;
   --color-ink-800: #0f1d35;
   --color-ink-900: #0a1424;
   --color-ink-950: #060c18;
 
-  /* Paper — warm light surface (replaces stark white) */
+  /* Paper — warm light surface */
   --color-paper: #faf8f2;
   --color-paper-deep: #f1ece0;
 
-  /* Gold — tiny premium "quality" accent, used sparingly */
+  /* Gold — premium accent */
   --color-gold-400: #d8a64a;
   --color-gold-500: #c0863a;
 
