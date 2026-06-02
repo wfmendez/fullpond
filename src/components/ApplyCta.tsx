@@ -16,18 +16,18 @@ export function ApplyCta() {
       <Ripples
         variant="emanate"
         count={5}
-        className="absolute left-1/2 top-1/2 -z-10 aspect-square w-[150%] max-w-[1100px] -translate-x-1/2 -translate-y-1/2 text-brand-300/20"
+        className="absolute left-1/2 top-1/2 -z-10 aspect-square w-[150%] max-w-[1100px] -translate-x-1/2 -translate-y-1/2 text-fp-dark/10"
       />
       <div className="absolute inset-0 -z-10 bg-grain opacity-[0.06] mix-blend-overlay" />
 
       <Container>
         <Reveal className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">
-            <span className="h-px w-8 bg-brand-300/50" />
+            <span className="h-px w-8 bg-fp-dark/25" />
             <span className="text-xs font-semibold uppercase tracking-[0.22em] text-fp-dark/70">
               Find a job
             </span>
-            <span className="h-px w-8 bg-brand-300/50" />
+            <span className="h-px w-8 bg-fp-dark/25" />
           </div>
           <h2 className="mt-4 font-display text-5xl font-semibold leading-[1.04] tracking-tight text-fp-dark text-balance md:text-6xl">
             Let’s work <span className="italic">together</span>

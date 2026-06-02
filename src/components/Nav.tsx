@@ -30,7 +30,7 @@ export function Nav() {
           <a
             href="#top"
             className={`font-display text-2xl font-semibold tracking-tight transition-colors ${
-              scrolled ? "text-ink-900" : "text-white"
+              scrolled ? "text-fp-dark" : "text-white"
             }`}
           >
             FullPond
@@ -53,7 +53,7 @@ export function Nav() {
             ))}
             <a
               href="/login"
-              className="group inline-flex items-center gap-1.5 rounded-full bg-gradient-to-b from-brand-400 to-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 ring-1 ring-inset ring-white/20 transition-all hover:shadow-brand-500/40 hover:brightness-110"
+              className="group inline-flex items-center gap-1.5 rounded-full rounded-full bg-fp-dark px-5 py-2.5 text-sm font-semibold text-fp-blue shadow-md transition-all hover:opacity-90"
             >
               Start today
               <IconArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -65,7 +65,7 @@ export function Nav() {
             type="button"
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
-            className={`md:hidden ${scrolled ? "text-ink-900" : "text-white"}`}
+            className={`md:hidden ${scrolled ? "text-fp-dark" : "text-white"}`}
           >
             {open ? (
               <IconX className="h-6 w-6" />
@@ -100,7 +100,7 @@ export function Nav() {
               <a
                 href="/login"
                 onClick={() => setOpen(false)}
-                className="mt-2 flex items-center justify-center gap-1.5 rounded-full bg-gradient-to-b from-brand-400 to-brand-600 px-5 py-3 text-sm font-semibold text-white"
+                className="mt-2 flex items-center justify-center gap-1.5 rounded-full bg-fp-dark px-5 py-3 text-sm font-semibold text-fp-blue"
               >
                 Start today
                 <IconArrowRight className="h-4 w-4" />

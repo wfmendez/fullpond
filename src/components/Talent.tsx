@@ -70,23 +70,23 @@ export function Talent() {
       <Container className="relative">
         <span
           aria-hidden
-          className="pointer-events-none absolute -top-6 left-0 select-none font-display text-[9rem] italic leading-none text-ink-900/[0.04] md:text-[13rem]"
+          className="pointer-events-none absolute -top-6 left-0 select-none font-display text-[9rem] italic leading-none text-fp-dark/[0.04] md:text-[13rem]"
         >
           02
         </span>
 
         <Reveal className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">
-            <span className="h-px w-8 bg-brand-500/40" />
-            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-600">
+            <span className="h-px w-8 bg-fp-dark/20" />
+            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-fp-dark/60">
               Our pond
             </span>
-            <span className="h-px w-8 bg-brand-500/40" />
+            <span className="h-px w-8 bg-fp-dark/20" />
           </div>
-          <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight text-ink-900 text-balance md:text-5xl">
-            Popular talent in our <span className="italic">“Pond”</span>
+          <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight text-fp-dark text-balance md:text-5xl">
+            Popular talent in our <span className="italic">"Pond"</span>
           </h2>
-          <p className="mt-4 text-lg text-stone-500 text-pretty">
+          <p className="mt-4 text-lg text-fp-dark/60 text-pretty">
             Hand-picked specialists across every function your business runs on.
           </p>
         </Reveal>
@@ -94,23 +94,25 @@ export function Talent() {
         <RevealGroup className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {categories.map(({ title, Icon, roles }) => (
             <RevealItem key={title} className="h-full">
-              <div className="group relative h-full overflow-hidden rounded-4xl border border-stone-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl hover:shadow-brand-500/10">
+              <div className="group relative h-full overflow-hidden rounded-4xl border-2 border-stone-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-fp-blue hover:shadow-xl hover:shadow-fp-blue/20">
+                {/* Ripple motif on hover */}
                 <Ripples
                   count={4}
-                  className="pointer-events-none absolute -bottom-12 -right-12 aspect-square w-44 text-brand-500/0 transition-colors duration-500 group-hover:text-brand-500/15"
+                  className="pointer-events-none absolute -bottom-12 -right-12 aspect-square w-44 text-fp-blue/0 transition-colors duration-500 group-hover:text-fp-blue/40"
                 />
                 <div className="relative">
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-50 text-brand-600 transition-colors duration-300 group-hover:bg-gradient-to-b group-hover:from-brand-400 group-hover:to-brand-600 group-hover:text-white">
+                  {/* Icon badge — fp-blue bg, fp-dark icon; flips on hover */}
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-fp-blue/20 text-fp-dark transition-all duration-300 group-hover:bg-fp-blue group-hover:text-fp-dark">
                     <Icon className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-5 font-display text-xl font-semibold text-ink-900">
+                  <h3 className="mt-5 font-display text-xl font-semibold text-fp-dark">
                     {title}
                   </h3>
                   <ul className="mt-4 flex flex-wrap gap-2">
                     {roles.map((role) => (
                       <li
                         key={role}
-                        className="rounded-full bg-stone-100 px-3 py-1 text-sm text-stone-600 transition-colors group-hover:bg-brand-50 group-hover:text-brand-700"
+                        className="rounded-full bg-stone-100 px-3 py-1 text-sm text-fp-dark/60 transition-colors group-hover:bg-fp-blue/20 group-hover:text-fp-dark"
                       >
                         {role}
                       </li>
