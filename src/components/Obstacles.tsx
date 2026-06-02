@@ -16,7 +16,7 @@ const solutions = [
   "Top talent for 25% of local price",
   "3-step interview process",
   "Flexible termination protocols",
-  "We find people who “Get it” when it comes to working in the US",
+  "We find people who \"Get it\" when it comes to working in the US",
   "Experienced and qualified talent",
   "Interview our top candidates tailored to your needs",
 ];
@@ -29,23 +29,23 @@ export function Obstacles() {
       <Container className="relative">
         <span
           aria-hidden
-          className="pointer-events-none absolute -top-6 right-0 select-none font-display text-[9rem] italic leading-none text-ink-900/[0.04] md:text-[13rem]"
+          className="pointer-events-none absolute -top-6 right-0 select-none font-display text-[9rem] italic leading-none text-fp-dark/[0.04] md:text-[13rem]"
         >
           01
         </span>
 
         <Reveal className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">
-            <span className="h-px w-8 bg-brand-500/40" />
-            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-600">
+            <span className="h-px w-8 bg-fp-dark/20" />
+            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-fp-dark/60">
               The shift
             </span>
-            <span className="h-px w-8 bg-brand-500/40" />
+            <span className="h-px w-8 bg-fp-dark/20" />
           </div>
-          <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight text-ink-900 text-balance md:text-5xl">
+          <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight text-fp-dark text-balance md:text-5xl">
             Eliminate growth obstacles
           </h2>
-          <p className="mt-4 text-lg text-stone-500 text-pretty">
+          <p className="mt-4 text-lg text-fp-dark/60 text-pretty">
             The old way of hiring slows you down. We flipped every pain point
             into an advantage.
           </p>
@@ -55,10 +55,8 @@ export function Obstacles() {
           {/* Problems */}
           <Reveal className="flex">
             <div className="flex w-full flex-col rounded-4xl border border-stone-200 bg-white/70 p-8 backdrop-blur-sm md:p-10">
-              <p className="font-display text-sm italic text-stone-400">
-                The old way
-              </p>
-              <h3 className="mt-1 font-display text-2xl font-semibold text-ink-900">
+              <p className="font-display text-sm italic text-stone-400">The old way</p>
+              <h3 className="mt-1 font-display text-2xl font-semibold text-fp-dark">
                 Current hiring problems
               </h3>
               <RevealGroup className="mt-8 space-y-4" stagger={0.06}>
@@ -67,35 +65,37 @@ export function Obstacles() {
                     <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-rose-50 text-rose-400">
                       <IconX className="h-3.5 w-3.5" strokeWidth={2.2} />
                     </span>
-                    <span className="text-stone-500">{item}</span>
+                    <span className="text-fp-dark/60">{item}</span>
                   </RevealItem>
                 ))}
               </RevealGroup>
             </div>
           </Reveal>
 
-          {/* Solution — dominant "deep water" card */}
+          {/* Solution — FullPond brand blue card */}
           <Reveal className="flex" delay={0.1}>
-            <div className="relative flex w-full flex-col overflow-hidden rounded-4xl bg-ink-900 p-8 shadow-2xl shadow-ink-900/25 md:p-10">
-              <div className="absolute inset-0 bg-spotlight opacity-80" />
+            <div
+              className="relative flex w-full flex-col overflow-hidden rounded-4xl p-8 shadow-2xl md:p-10"
+              style={{ background: "#64bcff" }}
+            >
               <Ripples
                 count={6}
-                className="absolute -right-20 -top-24 aspect-square w-[26rem] text-brand-300/20"
+                className="absolute -right-20 -top-24 aspect-square w-[26rem] text-fp-dark/10"
               />
               <div className="relative">
-                <p className="font-display text-sm italic text-brand-300">
+                <p className="font-display text-sm italic text-fp-dark/60">
                   The FullPond solution
                 </p>
-                <h3 className="mt-1 font-display text-2xl font-semibold text-white">
+                <h3 className="mt-1 font-display text-2xl font-semibold text-fp-dark">
                   Built to remove the friction
                 </h3>
                 <RevealGroup className="mt-8 space-y-4" stagger={0.06}>
                   {solutions.map((item) => (
                     <RevealItem key={item} className="flex items-start gap-3">
-                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-b from-brand-400 to-brand-600 text-white ring-1 ring-inset ring-white/20">
+                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-fp-dark text-fp-blue">
                         <IconCheck className="h-3.5 w-3.5" strokeWidth={2.4} />
                       </span>
-                      <span className="text-stone-100">{item}</span>
+                      <span className="text-fp-dark/80">{item}</span>
                     </RevealItem>
                   ))}
                 </RevealGroup>

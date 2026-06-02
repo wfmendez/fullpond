@@ -8,7 +8,8 @@ export function ApplyCta() {
   return (
     <section
       id="apply"
-      className="relative isolate overflow-hidden bg-ink-900 py-24 md:py-32"
+      className="relative isolate overflow-hidden py-24 md:py-32"
+      style={{ background: "#64bcff" }}
     >
       <div className="absolute inset-0 -z-10 bg-spotlight" />
       <div className="absolute inset-0 -z-10 bg-caustic opacity-60" />
@@ -23,15 +24,15 @@ export function ApplyCta() {
         <Reveal className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">
             <span className="h-px w-8 bg-brand-300/50" />
-            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-300">
+            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-fp-dark/70">
               Find a job
             </span>
             <span className="h-px w-8 bg-brand-300/50" />
           </div>
-          <h2 className="mt-4 font-display text-5xl font-semibold leading-[1.04] tracking-tight text-white text-balance md:text-6xl">
+          <h2 className="mt-4 font-display text-5xl font-semibold leading-[1.04] tracking-tight text-fp-dark text-balance md:text-6xl">
             Let’s work <span className="italic">together</span>
           </h2>
-          <p className="mx-auto mt-5 max-w-lg text-lg text-stone-300 text-pretty">
+          <p className="mx-auto mt-5 max-w-lg text-lg text-fp-dark/70 text-pretty">
             Skilled, motivated, and fluent in English? Dive into the pond and
             get matched with U.S. companies that value your work.
           </p>
@@ -39,14 +40,14 @@ export function ApplyCta() {
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
               href={site.applicantFormUrl}
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-b from-brand-400 to-brand-600 px-8 py-4 text-base font-semibold text-white shadow-xl shadow-brand-500/30 ring-1 ring-inset ring-white/20 transition-all hover:shadow-brand-400/50 hover:brightness-110 sm:w-auto"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-fp-dark px-8 py-4 text-base font-semibold text-fp-blue shadow-xl transition-all hover:opacity-90 sm:w-auto"
             >
               See open roles
               <IconArrowUpRight className="h-5 w-5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
             <a
               href="/hire"
-              className="inline-flex w-full items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 py-4 text-base font-semibold text-white backdrop-blur transition-colors hover:border-white/35 hover:bg-white/10 sm:w-auto"
+              className="inline-flex w-full items-center justify-center rounded-full border-2 border-fp-dark/25 bg-white/25 px-8 py-4 text-base font-semibold text-fp-dark backdrop-blur transition-colors hover:bg-fp-dark hover:text-fp-blue hover:border-transparent sm:w-auto"
             >
               Hire talent instead
             </a>

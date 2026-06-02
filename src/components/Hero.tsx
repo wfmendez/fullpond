@@ -11,11 +11,7 @@ const container: Variants = {
 };
 const item: Variants = {
   hidden: { opacity: 0, y: 24 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
-  },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
 };
 
 const trust = [
@@ -28,22 +24,20 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate overflow-hidden bg-ink-900 pt-36 pb-28 md:pt-44 md:pb-36"
+      className="relative isolate overflow-hidden pt-36 pb-28 md:pt-44 md:pb-36"
+      style={{ background: "#64bcff" }}
     >
-      {/* Deep-water atmosphere */}
-      <div className="absolute inset-0 -z-10 bg-spotlight" />
-      <div className="absolute inset-0 -z-10 bg-caustic opacity-70" />
-      {/* Droplet ripples emanating behind the headline */}
+      {/* Concentric ripple brand motif */}
       <Ripples
         variant="emanate"
         count={5}
-        className="absolute left-1/2 top-[18%] -z-10 aspect-square w-[150%] max-w-[1100px] -translate-x-1/2 text-brand-300/25 sm:top-[12%]"
+        className="absolute left-1/2 top-[18%] -z-10 aspect-square w-[150%] max-w-[1100px] -translate-x-1/2 text-fp-dark/10 sm:top-[12%]"
       />
       <Ripples
         count={7}
-        className="absolute left-1/2 top-[20%] -z-10 aspect-square w-[120%] max-w-[900px] -translate-x-1/2 text-brand-200/[0.08]"
+        className="absolute left-1/2 top-[20%] -z-10 aspect-square w-[120%] max-w-[900px] -translate-x-1/2 text-fp-dark/[0.05]"
       />
-      <div className="absolute inset-0 -z-10 bg-grain opacity-[0.06] mix-blend-overlay" />
+      <div className="absolute inset-0 -z-10 bg-grain opacity-[0.04] mix-blend-multiply" />
 
       <Container>
         <motion.div
@@ -52,21 +46,23 @@ export function Hero() {
           animate="show"
           className="mx-auto max-w-3xl text-center"
         >
+          {/* Badge */}
           <motion.span
             variants={item}
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-xs font-medium tracking-wide text-brand-100 backdrop-blur"
+            className="inline-flex items-center gap-2 rounded-full border-2 border-fp-dark/20 bg-white/30 px-4 py-1.5 text-xs font-semibold tracking-wide text-fp-dark backdrop-blur"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-aqua-400 shadow-[0_0_8px_var(--color-aqua-400)]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-fp-dark" />
             Top-tier talent · Latin America &amp; the Philippines
           </motion.span>
 
+          {/* Headline */}
           <motion.h1
             variants={item}
-            className="mt-7 font-display text-[2.85rem] font-semibold leading-[1.02] tracking-tight text-white text-balance sm:text-6xl md:text-7xl lg:text-[5.25rem]"
+            className="mt-7 font-display text-[2.85rem] font-semibold leading-[1.02] tracking-tight text-fp-dark text-balance sm:text-6xl md:text-7xl lg:text-[5.25rem]"
           >
             Cut Costs,{" "}
             <span className="relative whitespace-nowrap italic">
-              <span className="bg-gradient-to-r from-aqua-300 via-brand-300 to-brand-500 bg-clip-text text-transparent">
+              <span className="text-white drop-shadow-sm">
                 Not Quality
               </span>
             </span>
@@ -74,41 +70,40 @@ export function Hero() {
 
           <motion.p
             variants={item}
-            className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-stone-300 text-pretty md:text-xl"
+            className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-fp-dark/75 text-pretty md:text-xl"
           >
-            Tap into a “Full Pond” of global top-tier talent — at a fraction of
+            Tap into a "Full Pond" of global top-tier talent — at a fraction of
             the cost of local hires.
           </motion.p>
 
+          {/* CTAs */}
           <motion.div
             variants={item}
             className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
           >
             <a
               href="/login"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-b from-brand-400 to-brand-600 px-7 py-3.5 text-base font-semibold text-white shadow-xl shadow-brand-500/30 ring-1 ring-inset ring-white/20 transition-all hover:shadow-brand-400/50 hover:brightness-110 sm:w-auto"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-fp-dark px-7 py-3.5 text-base font-semibold text-fp-blue shadow-xl transition-all hover:opacity-90 sm:w-auto"
             >
               Start today
               <IconArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="#process"
-              className="inline-flex w-full items-center justify-center rounded-full border border-white/20 bg-white/5 px-7 py-3.5 text-base font-semibold text-white backdrop-blur transition-colors hover:border-white/35 hover:bg-white/10 sm:w-auto"
+              className="inline-flex w-full items-center justify-center rounded-full border-2 border-fp-dark/25 bg-white/20 px-7 py-3.5 text-base font-semibold text-fp-dark backdrop-blur transition-colors hover:bg-fp-dark hover:text-fp-blue hover:border-transparent sm:w-auto"
             >
               See how it works
             </a>
           </motion.div>
 
+          {/* Trust chips */}
           <motion.ul
             variants={item}
-            className="mt-12 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 text-sm text-stone-400"
+            className="mt-12 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 text-sm text-fp-dark/70"
           >
             {trust.map((t) => (
               <li key={t} className="flex items-center gap-2.5">
-                <span className="relative flex h-1.5 w-1.5 items-center justify-center">
-                  <span className="absolute h-1.5 w-1.5 rounded-full bg-aqua-400/60" />
-                  <span className="h-3 w-3 rounded-full ring-1 ring-aqua-400/30" />
-                </span>
+                <span className="h-1.5 w-1.5 rounded-full bg-fp-dark/50" />
                 {t}
               </li>
             ))}
