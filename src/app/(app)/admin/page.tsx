@@ -2,18 +2,9 @@ import Link from "next/link";
 import { requireAdmin } from "@/lib/dal";
 import { db } from "@/lib/db";
 import { STAGE_LABELS, ALL_STAGES, STAGE_STYLES, PIPELINE_STAGES } from "@/lib/stages";
-import { HelpBox } from "@/components/app/HelpBox";
 
 export const metadata = { title: "Overview — FullPond" };
 
-const HELP_STEPS = [
-  { icon: "📋", text: "Create a vacancy in Vacancies — it appears on the public site so candidates can apply." },
-  { icon: "👤", text: "When someone applies, their card appears in the Pipeline under Applied." },
-  { icon: "↔️", text: "Drag their card across stages: Screening → Interview → Client interview → Offer → Hired." },
-  { icon: "🏢", text: "Add the hiring company in Clients and link it to the vacancy." },
-  { icon: "📧", text: "Use Emails to notify your talent pool when a new role opens." },
-  { icon: "🎯", text: "Companies that fill the Hire talent form on the site appear as Leads." },
-];
 
 // ── Funnel bar chart (horizontal) ────────────────────────────────
 function FunnelChart({ data }: { data: { label: string; count: number; color: string }[] }) {
@@ -155,7 +146,7 @@ export default async function AdminHomePage() {
       </div>
 
       {/* Help */}
-      <HelpBox title="New here? Here's how the dashboard works" steps={HELP_STEPS} defaultOpen={totalApplications === 0} />
+      
 
       {/* ── KPI cards ── */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

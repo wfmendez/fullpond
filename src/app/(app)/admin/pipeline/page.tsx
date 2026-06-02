@@ -2,17 +2,9 @@ import Link from "next/link";
 import { requireAdmin } from "@/lib/dal";
 import { db } from "@/lib/db";
 import { PipelineBoard, type PipelineCard } from "./PipelineBoard";
-import { HelpBox } from "@/components/app/HelpBox";
 
 export const metadata = { title: "Pipeline — Admin FullPond" };
 
-const HELP_STEPS = [
-  { icon: "↔️", text: "Drag a candidate card left or right to move them to a new stage." },
-  { icon: "👁️", text: "Click View profile on any card to see their full answers and add recruiter notes." },
-  { icon: "🤝", text: "Client interview means the candidate meets the hiring company — use this stage when you've set that up." },
-  { icon: "✅", text: "Hired means placement is confirmed. Rejected removes the candidate from active consideration." },
-  { icon: "🔍", text: "Filter by vacancy using the URL param ?vacancy=ID, or use the Vacancies page → View candidates button." },
-];
 
 export default async function PipelinePage({
   searchParams,
@@ -48,7 +40,7 @@ export default async function PipelinePage({
       </p>
 
       <div className="mt-4">
-        <HelpBox title="How to use the pipeline board" steps={HELP_STEPS} />
+        <p className="mt-1 mb-2 text-sm text-fp-dark/50">Drag a card to move a candidate to the next stage. Click <strong>View profile</strong> to see their answers and add notes.</p>
       </div>
 
       {cards.length === 0 ? (

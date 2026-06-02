@@ -2,18 +2,12 @@ import Link from "next/link";
 import { requireAdmin } from "@/lib/dal";
 import { db } from "@/lib/db";
 import { createClientAction, deleteClientAction } from "@/lib/actions/client";
-import { HelpBox } from "@/components/app/HelpBox";
 
 export const metadata = { title: "Clients — Admin FullPond" };
 
 const inputCls =
   "w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2.5 text-sm text-ink-900 outline-none transition focus:border-fp-dark focus:ring-2 focus:ring-fp-dark/10";
 
-const HELP_STEPS = [
-  { icon: "🏢", text: "Clients are the U.S. companies that hire through FullPond. Add them here first." },
-  { icon: "🔗", text: "When creating a vacancy, pick a client to link it. The client name shows on each candidate card." },
-  { icon: "🤝", text: "During Client interview, the candidate meets this company — having their contact info here is handy for your team." },
-];
 
 export default async function AdminClientsPage() {
   await requireAdmin();
@@ -26,7 +20,7 @@ export default async function AdminClientsPage() {
       <p className="mt-1 text-stone-500">Companies that hire talent through FullPond.</p>
 
       <div className="mt-5">
-        <HelpBox title="How clients work" steps={HELP_STEPS} />
+        <p className="mt-1 mb-6 text-sm text-fp-dark/50">Add the companies you recruit for. Link a client to a vacancy so it appears on each candidate card during the hiring process.</p>
       </div>
 
       <form action={createClientAction} className="mb-8 rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">

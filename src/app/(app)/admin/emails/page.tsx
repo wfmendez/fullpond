@@ -2,7 +2,6 @@ import Link from "next/link";
 import { requireAdmin } from "@/lib/dal";
 import { db } from "@/lib/db";
 import { notifyNewVacancyAction } from "@/lib/actions/email";
-import { HelpBox } from "@/components/app/HelpBox";
 
 export const metadata = { title: "Emails — Admin FullPond" };
 
@@ -38,7 +37,7 @@ export default async function EmailsPage() {
       </p>
 
       <div className="mt-5">
-        <HelpBox title="How vacancy emails work" steps={HELP_STEPS} defaultOpen />
+        <p className="mt-1 mb-2 text-sm text-fp-dark/50">Pick an open role and notify all registered candidates at once. Each person receives a personalised email with the role details.</p>
       </div>
 
       <form action={notifyNewVacancyAction} className="mt-2 flex flex-wrap items-end gap-3 rounded-2xl border border-stone-200 bg-white p-5">

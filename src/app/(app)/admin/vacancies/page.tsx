@@ -2,16 +2,9 @@ import Link from "next/link";
 import { requireAdmin } from "@/lib/dal";
 import { db } from "@/lib/db";
 import { updateVacancyStatusAction, deleteVacancyAction } from "@/lib/actions/vacancy";
-import { HelpBox } from "@/components/app/HelpBox";
 
 export const metadata = { title: "Vacancies — Admin FullPond" };
 
-const HELP_STEPS = [
-  { icon: "📝", text: "Click + New vacancy to create a role. Write its title, description and build its application form with custom questions." },
-  { icon: "🔒", text: "Draft — only visible to admins. Open — live on the site, candidates can apply. Closed — hidden from candidates." },
-  { icon: "👥", text: "View candidates opens the pipeline filtered to that specific vacancy." },
-  { icon: "🗑️", text: "Deleting a vacancy also deletes all of its applications — be careful!" },
-];
 
 const STATUS_LABELS: Record<string, { label: string; color: string }> = {
   DRAFT:  { label: "Draft",  color: "bg-stone-100 text-stone-600" },
@@ -45,7 +38,7 @@ export default async function AdminVacanciesPage() {
       </div>
 
       <div className="mt-5">
-        <HelpBox title="How vacancies work" steps={HELP_STEPS} />
+        <p className="mt-1 mb-2 text-sm text-fp-dark/50">Set status to <strong>Open</strong> to publish a role publicly. <strong>Draft</strong> is only visible to admins. Deleting a vacancy removes all its applications.</p>
       </div>
 
       {vacancies.length === 0 ? (

@@ -2,16 +2,9 @@ import Link from "next/link";
 import { requireAdmin } from "@/lib/dal";
 import { db } from "@/lib/db";
 import { updateHireLeadStatusAction, deleteHireLeadAction } from "@/lib/actions/hire";
-import { HelpBox } from "@/components/app/HelpBox";
 
 export const metadata = { title: "Hire leads — Admin FullPond" };
 
-const HELP_STEPS = [
-  { icon: "🌐", text: "Leads come from the Hire talent form on the public website — companies wanting to hire through FullPond." },
-  { icon: "📧", text: "Click the email address to open your mail client and contact them directly." },
-  { icon: "🔄", text: "Update the status to track progress: New → Contacted → Won (deal closed) or Lost." },
-  { icon: "➡️", text: "Once a lead becomes a client, add them in the Clients section and link them to a vacancy." },
-];
 
 const STATUS_STYLES: Record<string, string> = {
   NEW: "bg-fp-blue/20 text-fp-dark ring-fp-blue/30",
@@ -31,7 +24,7 @@ export default async function AdminLeadsPage() {
       <p className="mt-1 text-stone-500">Companies that submitted the "Hire talent" form on the site.</p>
 
       <div className="mt-5">
-        <HelpBox title="How to handle leads" steps={HELP_STEPS} />
+        <p className="mt-1 mb-2 text-sm text-fp-dark/50">These are companies that filled the Hire talent form on the site. Contact them, update the status as you progress, and add them as a Client once confirmed.</p>
       </div>
 
       {leads.length === 0 ? (
