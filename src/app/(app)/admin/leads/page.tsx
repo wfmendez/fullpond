@@ -7,7 +7,7 @@ import { HelpBox } from "@/components/app/HelpBox";
 export const metadata = { title: "Hire leads — Admin FullPond" };
 
 const HELP_STEPS = [
-  { icon: "🌐", text: "Leads come from the "Hire talent" form on the public website — companies wanting to hire through FullPond." },
+  { icon: "🌐", text: "Leads come from the Hire talent form on the public website — companies wanting to hire through FullPond." },
   { icon: "📧", text: "Click the email address to open your mail client and contact them directly." },
   { icon: "🔄", text: "Update the status to track progress: New → Contacted → Won (deal closed) or Lost." },
   { icon: "➡️", text: "Once a lead becomes a client, add them in the Clients section and link them to a vacancy." },

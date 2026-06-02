@@ -12,7 +12,7 @@ const inputCls =
 const HELP_STEPS = [
   { icon: "🏢", text: "Clients are the U.S. companies that hire through FullPond. Add them here first." },
   { icon: "🔗", text: "When creating a vacancy, pick a client to link it. The client name shows on each candidate card." },
-  { icon: "🤝", text: "During "Client interview", the candidate meets this company — having their contact info here is handy for your team." },
+  { icon: "🤝", text: "During Client interview, the candidate meets this company — having their contact info here is handy for your team." },
 ];
 
 export default async function AdminClientsPage() {

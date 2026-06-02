@@ -23,10 +23,10 @@ export default async function EmailsPage() {
   const demoMode = !process.env.RESEND_API_KEY;
 
   const HELP_STEPS = [
-    { icon: "📋", text: `Choose an open role — the email will go to all ${userCount} registered candidate${userCount !== 1 ? "s" : ""} at once.` },
-    { icon: "👁️", text: "After sending, scroll down to the Email log and click "Preview email" to see exactly what each candidate received." },
-    { icon: demoMode ? "⚠️" : "✅", text: demoMode ? "Demo mode: emails are rendered & logged but NOT delivered. Add a RESEND_API_KEY environment variable in Vercel to send for real." : "Live mode: emails are sent via Resend directly to each candidate's inbox." },
-    { icon: "📜", text: "The log keeps a permanent record of every notification sent, with status SENT, RENDERED or FAILED." },
+    { icon: '📋', text: `Choose an open role — the email goes to all ${userCount} registered candidates at once.` },
+    { icon: '👁️', text: 'After sending, scroll to the Email log and expand any row to preview the email.' },
+    { icon: demoMode ? '⚠️' : '✅', text: demoMode ? 'Demo mode: emails are rendered and logged but NOT delivered. Add a RESEND_API_KEY in Vercel to send for real.' : 'Live mode: emails are delivered via Resend to each candidate inbox.' },
+    { icon: '📜', text: 'The log keeps a permanent record of every notification, with status SENT, RENDERED or FAILED.' },
   ];
 
   return (

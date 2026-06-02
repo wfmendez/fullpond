@@ -7,9 +7,9 @@ import { HelpBox } from "@/components/app/HelpBox";
 export const metadata = { title: "Vacancies — Admin FullPond" };
 
 const HELP_STEPS = [
-  { icon: "📝", text: "Click "+ New vacancy" to create a role. Write its title, description and build its application form with custom questions." },
+  { icon: "📝", text: "Click + New vacancy to create a role. Write its title, description and build its application form with custom questions." },
   { icon: "🔒", text: "Draft — only visible to admins. Open — live on the site, candidates can apply. Closed — hidden from candidates." },
-  { icon: "👥", text: ""View candidates" opens the pipeline filtered to that specific vacancy." },
+  { icon: "👥", text: "View candidates opens the pipeline filtered to that specific vacancy." },
   { icon: "🗑️", text: "Deleting a vacancy also deletes all of its applications — be careful!" },
 ];
 

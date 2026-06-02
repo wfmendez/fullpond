@@ -8,10 +8,10 @@ export const metadata = { title: "Pipeline — Admin FullPond" };
 
 const HELP_STEPS = [
   { icon: "↔️", text: "Drag a candidate card left or right to move them to a new stage." },
-  { icon: "👁️", text: "Click "View profile" on any card to see their full answers and add recruiter notes." },
-  { icon: "🤝", text: ""Client interview" means the candidate meets the hiring company — use this stage when you've set that up." },
-  { icon: "✅", text: ""Hired" means placement is confirmed. "Rejected" removes the candidate from active consideration." },
-  { icon: "🔍", text: "Filter by vacancy using the URL param ?vacancy=ID, or use the Vacancies page → "View candidates" button." },
+  { icon: "👁️", text: "Click View profile on any card to see their full answers and add recruiter notes." },
+  { icon: "🤝", text: "Client interview means the candidate meets the hiring company — use this stage when you've set that up." },
+  { icon: "✅", text: "Hired means placement is confirmed. Rejected removes the candidate from active consideration." },
+  { icon: "🔍", text: "Filter by vacancy using the URL param ?vacancy=ID, or use the Vacancies page → View candidates button." },
 ];
 
 export default async function PipelinePage({
