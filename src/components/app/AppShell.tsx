@@ -16,31 +16,32 @@ export function AppShell({ user, children }: { user: ShellUser; children: React.
   const isAdmin = user?.role === "ADMIN";
 
   return (
-    <div className="flex min-h-screen flex-col bg-paper text-ink-900">
-      <header className="sticky top-0 z-40 border-b border-stone-200/70 bg-paper/85 backdrop-blur-xl">
+    <div className="flex min-h-screen flex-col bg-gradient-to-b from-brand-50 to-paper text-ink-900">
+      <header className="sticky top-0 z-40 border-b border-brand-200/60 bg-brand-50/80 backdrop-blur-xl">
+        <div className="h-1 w-full bg-gradient-to-r from-brand-400 via-aqua-400 to-brand-500" />
         <Container className="flex h-16 items-center justify-between gap-4">
           <div className="flex items-center gap-7">
             <Link
               href="/"
               className="font-display text-xl font-semibold tracking-tight text-ink-900"
             >
-              FullPond
+              Full<span className="text-brand-600">Pond</span>
             </Link>
             <nav className="hidden items-center gap-6 text-sm font-medium text-stone-600 md:flex">
               {isAdmin ? (
                 <>
-                  <Link href="/admin" className="transition-colors hover:text-ink-900">Overview</Link>
-                  <Link href="/admin/vacancies" className="transition-colors hover:text-ink-900">Vacancies</Link>
-                  <Link href="/admin/pipeline" className="transition-colors hover:text-ink-900">Pipeline</Link>
-                  <Link href="/admin/clients" className="transition-colors hover:text-ink-900">Clients</Link>
-                  <Link href="/admin/emails" className="transition-colors hover:text-ink-900">Emails</Link>
-                  <Link href="/admin/leads" className="transition-colors hover:text-ink-900">Leads</Link>
+                  <Link href="/admin" className="transition-colors hover:text-brand-700">Overview</Link>
+                  <Link href="/admin/vacancies" className="transition-colors hover:text-brand-700">Vacancies</Link>
+                  <Link href="/admin/pipeline" className="transition-colors hover:text-brand-700">Pipeline</Link>
+                  <Link href="/admin/clients" className="transition-colors hover:text-brand-700">Clients</Link>
+                  <Link href="/admin/emails" className="transition-colors hover:text-brand-700">Emails</Link>
+                  <Link href="/admin/leads" className="transition-colors hover:text-brand-700">Leads</Link>
                 </>
               ) : (
                 <>
-                  <Link href="/vacancies" className="transition-colors hover:text-ink-900">Vacancies</Link>
+                  <Link href="/vacancies" className="transition-colors hover:text-brand-700">Vacancies</Link>
                   {user && (
-                    <Link href="/dashboard" className="transition-colors hover:text-ink-900">
+                    <Link href="/dashboard" className="transition-colors hover:text-brand-700">
                       My applications
                     </Link>
                   )}
@@ -64,7 +65,7 @@ export function AppShell({ user, children }: { user: ShellUser; children: React.
               </>
             ) : (
               <>
-                <Link href="/login" className="text-sm font-medium text-stone-600 transition-colors hover:text-ink-900">
+                <Link href="/login" className="text-sm font-medium text-stone-600 transition-colors hover:text-brand-700">
                   Sign in
                 </Link>
                 <Link
