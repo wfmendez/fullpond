@@ -49,7 +49,7 @@ export default async function VacancyDetailPage({
           ) : (
             <Link
               href={applyHref}
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-b from-brand-400 to-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 ring-1 ring-inset ring-white/20 transition hover:brightness-110"
+              className="inline-flex items-center gap-2 rounded-full bg-fp-dark px-6 py-3 text-sm font-semibold text-fp-blue shadow transition hover:opacity-90"
             >
               Apply to this role
               <IconArrowRight className="h-4 w-4" />
@@ -68,7 +68,7 @@ export default async function VacancyDetailPage({
           <p className="text-stone-600">Interested in this role?</p>
           <Link
             href={applyHref}
-            className="mt-3 inline-flex items-center gap-2 rounded-full bg-gradient-to-b from-brand-400 to-brand-600 px-6 py-3 text-sm font-semibold text-white shadow ring-1 ring-inset ring-white/20 transition hover:brightness-110"
+            className="mt-3 inline-flex items-center gap-2 rounded-full bg-fp-dark px-6 py-3 text-sm font-semibold text-fp-blue shadow transition hover:opacity-90"
           >
             Apply now
             <IconArrowRight className="h-4 w-4" />

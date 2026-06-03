@@ -31,7 +31,7 @@ export default async function VacanciesPage() {
             <li key={v.id}>
               <Link
                 href={`/vacancies/${v.slug}`}
-                className="group block rounded-2xl border border-stone-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-md"
+                className="group block rounded-2xl border border-stone-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-fp-blue hover:shadow-md"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div>
